@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane id="goldCoinImage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="716.0" prefWidth="1050.0" style="-fx-background-color: Gold;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Button id="goldButton" fx:id="goldButton" layoutX="465.0" layoutY="198.0" mnemonicParsing="false" onAction="#goldButtonClick" prefHeight="25.0" prefWidth="120.0" text="Farm" />
+      <ImageView id="goldCoinImage" fx:id="goldCoinImage" fitHeight="128.0" fitWidth="120.0" layoutX="465.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@goldcoin.jpg" />
+         </image>
+      </ImageView>
+      <Text layoutX="425.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Gold Farm">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Text>
+      <Text fx:id="goldDisplay" layoutX="441.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="168.7265625">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="WoWGoldCoin" fitHeight="19.0" fitWidth="21.0" layoutX="610.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@goldcoinwow.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="farmerButton" layoutX="46.0" layoutY="327.0" mnemonicParsing="false" onAction="#hireFarmerClick" text="Hire a gold farmer" />
+      <Button fx:id="upgFarmerPCButton" layoutX="46.0" layoutY="358.0" mnemonicParsing="false" onAction="#upgradeFarmerPCClick" text="Upgrade farmers PC" />
+      <Button fx:id="monsterEnergyButton" layoutX="46.0" layoutY="389.0" mnemonicParsing="false" onAction="#monsterEnergyClick" text="Supply farmers with Monster Energy Drinks" />
+      <Button fx:id="buyBot" layoutX="46.0" layoutY="471.0" mnemonicParsing="false" onAction="#buyBot" text="Buy a bot" />
+      <Button fx:id="upgradeBotProgram" layoutX="46.0" layoutY="502.0" mnemonicParsing="false" onAction="#UpgradeBotProgramClick" text="Upgrade the bot program" />
+      <TextArea fx:id="textAreaHowToPlay" layoutX="816.0" layoutY="484.0" prefHeight="200.0" prefWidth="200.0" text="How to play: " />
+   </children>
+</Pane>
