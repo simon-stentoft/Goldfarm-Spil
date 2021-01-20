@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -21,12 +22,7 @@
             <Font size="31.0" />
          </font>
       </Text>
-      <Text fx:id="goldDisplay" layoutX="441.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="168.7265625">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <ImageView fx:id="WoWGoldCoin" fitHeight="19.0" fitWidth="21.0" layoutX="610.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="WoWGoldCoin" fitHeight="19.0" fitWidth="21.0" layoutX="591.0" layoutY="228.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@goldcoinwow.png" />
          </image>
@@ -36,6 +32,12 @@
       <Button fx:id="monsterEnergyButton" layoutX="46.0" layoutY="389.0" mnemonicParsing="false" onAction="#monsterEnergyClick" text="Supply farmers with Monster Energy Drinks" />
       <Button fx:id="buyBot" layoutX="46.0" layoutY="471.0" mnemonicParsing="false" onAction="#buyBot" text="Buy a bot" />
       <Button fx:id="upgradeBotProgram" layoutX="46.0" layoutY="502.0" mnemonicParsing="false" onAction="#UpgradeBotProgramClick" text="Upgrade the bot program" />
-      <TextArea fx:id="textAreaHowToPlay" layoutX="816.0" layoutY="484.0" prefHeight="200.0" prefWidth="200.0" text="How to play: " />
+      <TextArea fx:id="textAreaHowToPlay" layoutX="798.0" layoutY="445.0" prefHeight="257.0" prefWidth="238.0" text="                       How to play &#10;Click Farm to farm gold.&#10;Use that gold to hire gold farmers to &#10;passively gain more gold.&#10;Use more gold to buy bots.&#10;Upgrade your farmers and bots efficiency&#10;by buying better PC's, supply them with&#10;Energy drinks and upgrading the bot &#10;program.&#10;Cost: Gold farmer = 50g&#10;PC upgrade = 2000g&#10;Monster Energy Drinks = 200g&#10;Bot = 150g&#10;Upgrade bot program = 600g" />
+      <Label fx:id="goldSum" layoutX="465.0" layoutY="228.0" prefHeight="17.0" prefWidth="120.0" />
+      <Label fx:id="goldFarmerLabel" layoutX="169.0" layoutY="331.0" />
+      <Label fx:id="upgFarmerPCLabel" layoutX="178.0" layoutY="362.0" />
+      <Label fx:id="farmerMonsterEnergyLabel" layoutX="297.0" layoutY="393.0" />
+      <Label fx:id="botLabel" layoutX="123.0" layoutY="475.0" />
+      <Label layoutX="206.0" layoutY="506.0" />
    </children>
 </Pane>
