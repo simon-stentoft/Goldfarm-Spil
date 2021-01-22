@@ -62,21 +62,22 @@ public class Controller {
     }
     public void upgradeFarmerPCClick() { //PC Button: Big upgrade for farmers. Make farmers 2x effective.
         if (goldCoinSum.intValue() >= 2000) {  // if (goldCoinSum >= 2000)
-            goldCoinSum.add(-2000);
+            goldCoinSum.set(goldCoinSum.intValue()-2000);
             farmerPCUpgrades++;
             upgFarmerPCLabel.setText(String.valueOf(farmerPCUpgrades));
         }
     }
-    public void buyBot() { //Buy bot button, 150 gold. Passive 15 gold a second
+    public void buyBot() { //Buy bot button, 150 gold. Passive 5 gold a second
         if (goldCoinSum.intValue() >= 150) {
-            goldCoinSum.add(-150);
+            goldCoinSum.set(goldCoinSum.intValue()-150);
             bots++;
             botLabel.setText(String.valueOf(bots));
+            bot();
         }
     }
     public void UpgradeBotProgramClick() { //Buy better bot programs to increase bot efficiency by 50%.
         if (goldCoinSum.intValue() >= 600) {
-            goldCoinSum.add(-600);
+            goldCoinSum.set(goldCoinSum.intValue()-600);
             botProgramUpgrades++;
             botProgramLabel.setText(String.valueOf(botProgramUpgrades));
         }
@@ -101,13 +102,23 @@ public class Controller {
 
     }
     public void farmerPC() { //Increases amount farmed by farmer
+        if (farmer > 0) {
 
+        }
     }
     public void monsterEnergyDrinks() { //Increases speed of farming by farmers
         
     }
     public void bot() { //Buy bots to increase farming of gold
-
+        final ScheduledExecutorService botScheduler = Executors.newScheduledThreadPool(1);
+        final Runnable goldPrSecond = new Runnable() {
+            @Override
+            public void run() {
+                goldCoins = goldCoins + 5;
+                Platform.runLater(updateGold);
+            }
+        };
+        final ScheduledFuture<?> goldPrSecondHandle = botScheduler.scheduleWithFixedDelay(goldPrSecond,0,1,SECONDS);
     }
     public void botProgram() { //50% increased efficiency of bots
 
