@@ -14,7 +14,6 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch(args);
 
-
     }
 
     @Override
@@ -23,6 +22,7 @@ public class Main extends Application {
         primaryStage.setTitle("Gold Farm Game");
         primaryStage.setScene(new Scene(root,1050,716));
         primaryStage.show();
-        
+
+
     }
 }
