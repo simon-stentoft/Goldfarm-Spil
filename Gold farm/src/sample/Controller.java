@@ -31,7 +31,7 @@ public class Controller {
     int goldCoins = 0;
 
     long bots = 0; //Number of bots
-    long botProgramUpgrades = 0; //Bot program upgrades
+    int botProgramUpgrades = 0; //Bot program upgrades
 
     @FXML
     Label goldSum,goldFarmerLabel,upgFarmerPCLabel,farmerMonsterEnergyLabel,botLabel,botProgramLabel;
@@ -55,7 +55,7 @@ public class Controller {
     }
     public void monsterEnergyClick() { //Supply farmers with energy drinks. Cost 200 gold. Passive 20 gold a second
         if (goldCoinSum.intValue() >= 200) {
-            goldCoinSum.add(-200);
+            goldCoinSum.set(goldCoinSum.intValue()-200);
             monsterEnergyDrinks++;
             farmerMonsterEnergyLabel.setText(String.valueOf(monsterEnergyDrinks));
         }
@@ -75,9 +75,9 @@ public class Controller {
             bot();
         }
     }
-    public void UpgradeBotProgramClick() { //Buy better bot programs to increase bot efficiency by 50%.
-        if (goldCoinSum.intValue() >= 600) {
-            goldCoinSum.set(goldCoinSum.intValue()-600);
+    public void UpgradeBotProgramClick() { //Buy better bot programs to increase bot efficiency by 100%.
+        if (goldCoinSum.intValue() >= 1500) {
+            goldCoinSum.set(goldCoinSum.intValue()-1500);
             botProgramUpgrades++;
             botProgramLabel.setText(String.valueOf(botProgramUpgrades));
         }
@@ -99,7 +99,6 @@ public class Controller {
                 }
             };
             final ScheduledFuture<?> goldPrSecondHandle = scheduler.scheduleWithFixedDelay(goldPrSecond, 0, 1, SECONDS);
-
     }
     public void farmerPC() { //Increases amount farmed by farmer
         if (farmer > 0) {
@@ -120,7 +119,7 @@ public class Controller {
         };
         final ScheduledFuture<?> goldPrSecondHandle = botScheduler.scheduleWithFixedDelay(goldPrSecond,0,1,SECONDS);
     }
-    public void botProgram() { //50% increased efficiency of bots
+    public void botProgram() { //100% increased efficiency of bots
 
     }
 }
